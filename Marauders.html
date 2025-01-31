@@ -48,6 +48,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column; /* Stack items vertically */
             overflow: hidden;
         }
 
@@ -66,6 +67,13 @@
             color: #ffffff;
             text-shadow: 0 0 10px #ff4757, 0 0 20px #ff4757, 0 0 30px #ff4757;
             animation: fadeIn 2s ease-in-out;
+            z-index: 1;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px; /* Space between buttons */
+            margin-top: 20px;
             z-index: 1;
         }
 
@@ -109,6 +117,132 @@
         .btn:hover {
             transform: scale(1.1);
             box-shadow: 0 0 25px #ff4757;
+        }
+
+        /* Why Join Marauders Section */
+        .why-join {
+            padding: 40px 20px;
+            background-color: #1a1a1a;
+            text-align: center;
+        }
+
+        .why-join h2 {
+            font-size: 36px;
+            color: #ff4757;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .why-join p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Current Divisions Section */
+        .divisions {
+            padding: 40px 20px;
+            background-color: #262626;
+            text-align: center;
+        }
+
+        .divisions h2 {
+            font-size: 36px;
+            color: #ff4757;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .divisions p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 3px solid #ff4757;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        /* License and Rules Button */
+        .license-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #ffffff;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .license-btn:hover {
+            color: #ff4757;
+        }
+
+        /* License and Rules Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #262626;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .modal-content h2 {
+            font-size: 24px;
+            color: #ff4757;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .modal-content ul {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .close-btn {
+            background-color: #ff4757;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            background-color: #e84141;
         }
 
         /* Animations */
@@ -174,6 +308,10 @@
     <!-- Parallax Section with Logo as Background -->
     <div class="parallax">
         <h2>Welcome to the Elite</h2>
+        <div class="button-container">
+            <a href="#why-join" class="btn">Why Join Marauders</a>
+            <a href="#divisions" class="btn">Current Divisions</a>
+        </div>
     </div>
 
     <!-- About Section -->
@@ -188,9 +326,85 @@
         <a href="https://discord.gg/jNzD43huZP" class="btn" target="_blank">Join the Marauders</a>
     </section>
 
+    <!-- Why Join Marauders Section -->
+    <section id="why-join" class="why-join">
+        <h2>Why Join Marauders?</h2>
+        <p>
+            Joining the Marauders means becoming part of an elite community of skilled players. We offer:
+        </p>
+        <ul>
+            <li>🏆 Competitive scrims and tournaments.</li>
+            <li>🤝 A supportive and collaborative environment.</li>
+            <li>🎮 Opportunities to improve your skills with the best players.</li>
+            <li>🌟 Recognition as part of one of the most respected TPS clans.</li>
+        </ul>
+    </section>
+
+    <!-- Current Divisions Section -->
+    <section id="divisions" class="divisions">
+        <h2>Current Divisions</h2>
+        <p>
+            The Marauders are divided into three elite divisions:
+        </p>
+        <ul>
+            <li><strong>Scorch Guard:</strong> The main scrim players, consisting of highly skilled individuals.</li>
+            <li><strong>Reaper Guard:</strong> Elite players who assist Scorch Guard members in scrims. They are the best of the best and consist of only a few top-tier players.</li>
+            <li><strong>Palace Guard:</strong> The backbone of the clan, providing support and ensuring smooth operations.</li>
+        </ul>
+    </section>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Marauders. All rights reserved.</p>
+        <button class="license-btn" onclick="openModal()">License & Rules</button>
     </footer>
+
+    <!-- License and Rules Modal -->
+    <div id="licenseModal" class="modal">
+        <div class="modal-content">
+            <h2>License & Rules</h2>
+            <p>
+                <strong>MIT License</strong><br>
+                Copyright (c) 2025 Marauders
+            </p>
+            <p>
+                Permission is hereby granted, free of charge, to any person obtaining a copy
+                of this software and associated documentation files (the "Software"), to deal
+                in the Software without restriction, including without limitation the rights
+                to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                copies of the Software, and to permit persons to whom the Software is
+                furnished to do so, subject to the following conditions:
+            </p>
+            <p>
+                The above copyright notice and this permission notice shall be included in all
+                copies or substantial portions of the Software.
+            </p>
+            <p>
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                SOFTWARE.
+            </p>
+            <p>
+                <strong>Credits:</strong><br>
+                Website designed and developed by <strong>edgarsrt</strong>.
+            </p>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Modal Functions
+        function openModal() {
+            document.getElementById('licenseModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('licenseModal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
