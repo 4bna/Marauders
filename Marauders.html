@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marauders - Elite TPS Clan</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
+        /* Header */
+        header {
+            background-color: #000000;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 3px solid #ff4757;
+            position: relative;
+            z-index: 10;
+        }
+
+        header img {
+            width: 150px;
+            height: auto;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        header h1 {
+            margin: 10px 0 0;
+            font-size: 36px;
+            color: #ff4757;
+            animation: glow 2s infinite alternate;
+        }
+
+        /* Parallax Background with Logo */
+        .parallax {
+            position: relative;
+            height: 100vh;
+            background: url('https://cdn.discordapp.com/attachments/1121702748862304259/1334972228797993101/testz2.png?ex=679e7945&is=679d27c5&hm=e9585300bffa5f42737a7a6a1d108d6894b97043686132b98839854eb55b83c9&') no-repeat center center/cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .parallax::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay for better text visibility */
+        }
+
+        .parallax h2 {
+            font-size: 48px;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ff4757, 0 0 20px #ff4757, 0 0 30px #ff4757;
+            animation: fadeIn 2s ease-in-out;
+            z-index: 1;
+        }
+
+        /* About Section */
+        .about {
+            padding: 40px 20px;
+            background-color: #262626;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            color: #ff4757;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .about p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Glowing Button */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #ff4757;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 15px #ff4757;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px #ff4757;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #ff4757, 0 0 20px #ff4757, 0 0 30px #ff4757;
+            }
+            100% {
+                text-shadow: 0 0 20px #ff4757, 0 0 40px #ff4757, 0 0 60px #ff4757;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="https://cdn.discordapp.com/attachments/1121702748862304259/1334972228797993101/testz2.png?ex=679e7945&is=679d27c5&hm=e9585300bffa5f42737a7a6a1d108d6894b97043686132b98839854eb55b83c9&" alt="Marauders Logo">
+        <h1>Marauders</h1>
+    </header>
+
+    <!-- Parallax Section with Logo as Background -->
+    <div class="parallax">
+        <h2>Welcome to the Elite</h2>
+    </div>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Marauders</h2>
+        <p>
+            The Marauders are an elite Third-Person Shooter (TPS) clan, owned by <strong>KingNinjah</strong>. Assisting him are the <strong>Prince</strong> - gunfein, civaltoviann, and Xeqtricity. The <strong>Royalty</strong> includes deadharry, T_nacity, icey4a, D_wrldz, Thalonis, and UnstableExistence.
+        </p>
+        <p>
+            The Marauders are known for their exceptional skills and teamwork, with the clan being carried by the GOAT, <strong>endcharr</strong>.
+        </p>
+        <a href="https://discord.gg/jNzD43huZP" class="btn" target="_blank">Join the Marauders</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Marauders. All rights reserved.</p>
+    </footer>
+</body>
+</html>
